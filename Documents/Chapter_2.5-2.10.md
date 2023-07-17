@@ -37,6 +37,6 @@ contract AccountsDemo{
     }
 }
 ```
- <img width="182" alt="그림2 8" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/f91db6e4-6af2-4679-84c0-31cbe5c5718c">
+ <img width="364" alt="그림2 8" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/f91db6e4-6af2-4679-84c0-31cbe5c5718c">
 
 
