@@ -187,13 +187,10 @@ contract Airlines{
 
 }
 ```
-
-### 2.7.3 ASK 스마트 컨트랙트의 배포와 테스팅
-
-#### 테스트 계획 설명
-
-#### 테스트 설명
-
+* address - 의장의 아이덴티티를 나타냄
+* struct - 에스크로 또는 예치금을 포함한 항공사의 데이터를 집합적으로 정의
+* mapping - 회원의 어카운트 주소를 그들의 상세정보에 매핑(like hash table)
+* modifier - memberOnly와 chairpersonOnly를 정의
 
 ## 2.8 스마트 컨트랙트 설계 고려 사항
 
