@@ -39,4 +39,21 @@ contract AccountsDemo{
 ```
  <img width="364" alt="그림2 8" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/f91db6e4-6af2-4679-84c0-31cbe5c5718c">
 
+## 2.6 탈중앙화 항공사 시스템 유스 케이스
+**항공사 시스템 컨소시엄 ASK(airline system consortium) 블록체인**은 참여 항공사 간에 좌석의 P2P트랜잭션을 가능하게 해주는 시스템
+즉, ASK는 서로 코드를 공유하지 않는 항공사들이 좌석을 P2P로 거래할 수 있는 시장
+
+### 2.6.1 ASK 정의
+- 각 항공사는 ASK 트랜잭션에서 좌석의 정산에 사용될, 미리 설정된 최소 escrow금액을 예치함으로써 ASK에 합류할 수 있음.
+- ASK의 문제 설정, 이슈, 블록체인 기반 솔루션, 결과물 등을 다음 사분면 차트로 요약
+
+<img width="574" alt="그림2 9" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/2a5cf210-2c6d-47ce-bd45-b272202442ad">
+
+- 이 유스 케이스는 기본적인 항공사 간의 P2P 좌석 거래로 허용 범위를 한정함.
+- **이 조회는 소프트웨어 어플리케이션에 의해 프로그래밍적으로 호출되며, 중개자가 필요없다.**
+- 애플리케이션의 요청은 직접 항공사로 보내진다.
+  
+### 2.6.2 오퍼레이션 단계
+<img width="578" alt="그림2 10" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/52511a65-d1b2-4a9d-b0dd-55593e3fac32">
+
 
