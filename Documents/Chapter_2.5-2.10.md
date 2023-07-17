@@ -21,7 +21,7 @@
   <사용자 이름, 암호> 조합은 탈중앙화 시스템에서 작동하지 않음.
   피어가 통상적인 신뢰 범위 밖에 있기 때문.
 
-```
+```Remix
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 contract AccountsDemo{
@@ -63,7 +63,7 @@ contract AccountsDemo{
 
  1. 고객이 항공사 A에 예약해 두었던 좌석을 바꾸어 달라는 요청을 한다.
  2. 항공사 A의 에이전트나 애플리케이션은 ASK 컨소시엄 회원들에게 공유된 스마트 컨트랙트 로직을 사용해 이 요청을 확인하고 검증한다.
- 3. 확인 후에 이 요청 Tx는 컨펌되고 변조 불가능한 분산 장부에 기록된다. 이제 컨소시엄에 속해 있는 모든 주체는 정당한 요청이 생성되었음    을 알게 된다.
+ 3. 확인 후에 이 요청 Tx는 컨펌되고 변조 불가능한 분산 장부에 기록된다. 이제 컨소시엄에 속해 있는 모든 주체는 정당한 요청이 생성되었     음을 알게 된다.
  4. 가장 단순한 설계에서는 항공사 A의 에이전트가 확인 및 검증된 요청(VVRequest)을 항공사 B에게 보낸다.
  5. 항공사 B의 에이전트 또는 애플리케이션이 자사의 데이터 베이스를 검색해 가용성을 확인한다.
  6. 항공사 B의 에이전트는 컨소시엄의 공동 이해관계와 공유된 규칙을 확인하고 검증하는 공유 스마트 컨트랙트 로직을 통해서 응답을 한다.
@@ -72,12 +72,12 @@ contract AccountsDemo{
  9. 항공사 A는 자기의 데이터베이스를 업데이트하고 변화된 것을 기록한다.
 10. 항공사 B의 에이전트는 고객에게 좌석과 기타 상세 정보를 보낸다.
     *여기서 항공사 B는 항공사 A에게 자신이 가진 정보를 보내는 것이 아니고 직접 고객에게 보낸다는 점에 주목*
-12. 지급은 참여 항공사들이 공유하고 있는 스마트 컨트랙트에 에스크로해 두었거나, 예치했던 금액을 이용한 P2P 트랜잭션을 통해 정산한다.      지급 정산은 시스템 내의 다른 오퍼레이션에서도 포함할 수 있지만, 모든 공유 스마트 컨트랙트로 처리하여 장부에 기록한다. 스마트 컨트랙    트의 로직이 자동으로 정산을 수행하는 것이다.
+12. 지급은 참여 항공사들이 공유하고 있는 스마트 컨트랙트에 에스크로해 두었거나, 예치했던 금액을 이용한 P2P 트랜잭션을 통해 정산한다.      지급 정산은 시스템 내의 다른 오퍼레이션에서도 포함할 수 있지만, 모든 공유 스마트 컨트랙트로 처리하여 장부에 기록한다. 스마트 컨트     랙트의 로직이 자동으로 정산을 수행하는 것이다.
 
 
 ## 2.7 항공사 스마트 컨트랙트
 **설계원칙**
-1. 테스트 체인에서 스마트 컨트랙트를 코딩, 개발, 배포하기 전에 우선 설계부터 한다. 또한, 프로덕션 블록체인에 배포하기 전에 철저한 테스   트를 거쳐야 한다. 왜냐하면 스마트 컨트랙트는 변조 불가능하기 때문이다.
+1. 테스트 체인에서 스마트 컨트랙트를 코딩, 개발, 배포하기 전에 우선 설계부터 한다. 또한, 프로덕션 블록체인에 배포하기 전에 철저한 테     스트를 거쳐야 한다. 왜냐하면 스마트 컨트랙트는 변조 불가능하기 때문이다.
 2. 시스템 사용자와 유스 케이스를 정의한다. 사용자란 행위와 입력값을 발생시키고, 설계하고 있는 해당 시스템으로부터 그 출격값을 받는 주    체다.
 3. 데이터 에셋, 피어 참여자, 그들의 역할, 강제할 규칙, 설계하고 있는 시스템에 기록해야 할 트랜잭션을 정의힌다.
 4. 컨트랙트 이름, 데이터 애셋, 함수, 함수의 실행과 데이터 접근을 위한 규칙을 정의하는 컨트랙트 다이어그램을 작성한다.
@@ -119,6 +119,74 @@ contract AccountsDemo{
 :heavy_exclamation_mark: **수정자(modifier)** 는 검증과 확인을 위한 규칙을 명시적으로 표현하는 것을 가능하게 하는 언어적 기능이다. 이 수정자는 검증과 확인을 하는 게이트키퍼이기 때문에 신뢰 확보를 위해 특히 중요하다.
 
 ### 2.7.2 항공사 스마트 컨트랙트 코드
+```Remix
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+contract Airlines{
+    address chairperson;
+    struct details{
+        uint escrow;
+        uint status;
+        uint hashOfDetails;
+    }
+
+    mapping (address=>details) public balanceDetails;
+    mapping (address=>uint) membership;
+
+    modifier  onlyChairperson{
+        require(msg.sender==chairperson);
+        _;
+    }
+    modifier onlyMember{
+        require(membership[msg.sender]==1);
+        _;
+    }
+
+    constructor() payable {
+        chairperson==msg.sender;
+        membership[msg.sender]=1;
+        balanceDetails[msg.sender].escrow=msg.value;
+    }
+
+    function register() public payable {
+        address AirlineA = msg.sender;
+        membership[AirlineA]=1;
+        balanceDetails[msg.sender].escrow=msg.value;
+    }
+
+    function unregister (address payable AirlineZ) onlyChairperson public{
+        membership[AirlineZ]=0;
+        AirlineZ.transfer(balanceDetails[AirlineZ].escrow);
+        balanceDetails[AirlineZ].escrow=0;
+    }
+
+    function request (address toAirline, uint hashOfDetails) onlyMember public{
+        if(membership[toAirline]!=1){
+            revert();
+        }
+        balanceDetails[msg.sender].status=0;
+        balanceDetails[msg.sender].hashOfDetails=hashOfDetails;
+    }
+    function response (address fromAirline, uint hashOfDetails, uint done) onlyMember public{
+        if(membership[fromAirline]!=1){
+            revert();
+        }
+        balanceDetails[msg.sender].status=done;
+        balanceDetails[msg.sender].hashOfDetails=hashOfDetails;
+    }
+    function settlePayment (address payable toAirline) onlyMember payable public{
+        address fromAirline=msg.sender;
+        uint amt=msg.value;
+
+        balanceDetails[toAirline].escrow=balanceDetails[toAirline].escrow+amt;
+        balanceDetails[fromAirline].escrow=balanceDetails[fromAirline].escrow-amt;
+
+        toAirline.transfer(amt);
+    }
+
+
+}
+```
 
 ### 2.7.3 ASK 스마트 컨트랙트의 배포와 테스팅
 
