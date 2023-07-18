@@ -87,7 +87,7 @@ contract AccountsDemo{
 
 다음 그림은 설계원칙 1,2,3을 이용해서 ASK 유스 케이스와 컨트랙트 다이어그램을 보여줌.
 
-<img width="586 alt="그림2 11" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/b33fa683-f6b4-44d5-a986-0d37f9f606e5">
+<img width="586" alt="그림2 11" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/b33fa683-f6b4-44d5-a986-0d37f9f606e5">
 
 ### 2.7.1 피어 참여자, 데이터 애셋, 역할, 트랜잭션, 규칙
 - 참여자, 그들의 역할, 그들이 컨트롤하고 있는 애셋, 관련 트랜잭션을 구분하는 것은 표준적인 설계 과정의 공통된 첫 번째 단계다.
