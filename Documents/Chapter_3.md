@@ -10,6 +10,7 @@
   ### 3.1.1 신뢰
 
   - 신뢰는 시스템에 참여하는 피어 참여자의 신용에 대한 척도
+
     <img width="281" alt="그림3-1" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/6136b9ac-38c7-46f7-bbd9-2f8149f7e027">
 
 
