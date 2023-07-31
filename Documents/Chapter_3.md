@@ -10,7 +10,8 @@
   ### 3.1.1 신뢰
 
   - 신뢰는 시스템에 참여하는 피어 참여자의 신용에 대한 척도
-    ![Alt text](%EA%B7%B8%EB%A6%BC3-1.png)
+    <img width="281" alt="그림3-1" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/6136b9ac-38c7-46f7-bbd9-2f8149f7e027">
+
 
   - 그림 3.1의 첫 번째 사분면 차트에서 신뢰의 근본적 요소인 확인(la)과 검증(lb)에 의해 신뢰를 확립한다.
 
@@ -48,7 +49,8 @@
    
   ### 3.2.2 유스 케이스 다이어그램
   투표 문제를 UML 유스 케이스 다이어그램을 이용해 분석하자.
-  ![Alt text](%EA%B7%B8%EB%A6%BC3-3.png)
+  <img width="269" alt="그림3-3" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/55a70809-b4bc-4e15-a850-f5bc67e05cd6">
+
 
 
   **✔ 주요 행위자와 역할**
@@ -110,7 +112,8 @@
        - **outputs** - 상태 변화 동안 출력되는 것. 없을 수도 있고 하나 이상일 수도 있다. 예를 들면 표시된 상태에 따라 등록(Regs), 투표(Vote), 집계(Done) 등이 일어난다.
       - 투표 과정을 나타내는 네 개의 단계 또는 상태를 정의함.
 
-        ![Alt text](%EA%B7%B8%EB%A6%BC3-5.png)
+        <img width="260" alt="그림3-5" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/a3608961-754a-4f2f-92ca-f7b3739d1a28">
+
       
       **BallotV2.sol**
       ```
@@ -188,7 +191,8 @@
    ### 3.2.8 수정자를 포함한 컨트랙트 다이어그램
    :exclamation: 투표 스마트 컨트랙트를 코딩하기 위해 필요한 데이터 구조와 함수를 정의하는 컨트랙트 다이어그램을 만들어 보자.
 
-  ![Alt text](%EA%B7%B8%EB%A6%BC3-6.png)
+  <img width="284" alt="그림3-6" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/603b0eba-064e-4ac5-a985-209c9bd5bee4">
+
   - 데이터 정의 아래에 **modifier validPhase** 라는 수정자 정의가 있음
   - 수정자 validPhase가 Phase reqPhase 파라미터를 가지고 있다는 것에 주목하자.
   - 다른 함수에서 validPhase 수정자가 세 개의 다른 파라미터(Regs, Vote, Done)를 가지고 호출되었다는 것에 주목하자.
