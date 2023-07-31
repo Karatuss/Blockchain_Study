@@ -51,8 +51,9 @@
    
   ### 3.2.2 유스 케이스 다이어그램
   투표 문제를 UML 유스 케이스 다이어그램을 이용해 분석하자.
-  <img width="269" alt="그림3-3" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/55a70809-b4bc-4e15-a850-f5bc67e05cd6">
 
+  
+  <img width="269" alt="그림3-3" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/55a70809-b4bc-4e15-a850-f5bc67e05cd6">
 
 
   **✔ 주요 행위자와 역할**
