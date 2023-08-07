@@ -185,6 +185,7 @@
 
 ### 7.4.4 MPC 스마트 컨트랙트 (MPC-contract)
 <img width="300" alt="그림 7 8" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/a2301044-e6d7-4dfb-8890-c1e8c6fbba30">
+
 - 컨트랙트는 constructor 함수를 포함해 두 개의 퍼블릭 함수를 가진다.
 - 이 함수들은 그림 7.7의 분석에서 식별한 두 개의 온체인 오퍼레이션(1, 5)을 코드로 구현한 것이다.
   - **constructor는 주관자가 스마트 컨트랙트를 배포할 수 있도록 한다.**
@@ -239,4 +240,5 @@
 - 해싱과 사인을 하는 MPC-app의 app.js 코드에서 constructPaymentMessage()함수가 메시지 요소의 해싱을 담당하고, signMessage() 함수는 사인을 처리한다.
 
 <img width="224" alt="그림 7 10" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/edb2ac8f-5b60-467c-8c17-d366a70009c6">
+
 - 그림 7.10은 사인을 확정하기 위한 메타마스크 창을 나타낸 것이다.
