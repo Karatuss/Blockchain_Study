@@ -28,7 +28,8 @@
 
 :two: 블록체인상에 탈중앙화 애플리케이션 스택을 가능하게 하는 함수들
 
-![Alt text](<그림 7.1.png>)
+<img width="258" alt="그림 7 1" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/a4aa1521-575c-4770-8fc2-e0e86ab0437e">
+
 
 - 그림 7.1의 상단 부분은 **애플리케이션 모듈**을 보여주는데, 웹 서버와 app.js에 있는 애플리케이션 코드를 포함한다.
 - 그림 7.1의 하단 부분은 **블록체인 클라이언트 노드 모듈**인데, 코어 블록 체인 서비스를 제공한다.
@@ -50,7 +51,8 @@
   - **providers 패키지**는 가나쉬 같은 특정한 web3 프로바이더를 설정할 수 있도록 한다.
   - **utils 패키지**는 Dapp을 위한 표준적이며 공통적인 유틸리티 함수들을 제공한다.
 
-    ![Alt text](<그림 7.2.png>)
+    <img width="299" alt="그림 7 2" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/67491842-c7fd-4776-8470-2f79d8a6d52e">
+
 
    - web3.core : 블록체인 오퍼레이션을 위한 코어 프로토콜을 구현
    - web3.net : 트랜잭션을 브로드캐스팅하고 수신하는 네트워크 측면을 담당
@@ -64,7 +66,7 @@
 
 :heavy_check_mark: <span style='background-color:#dcffe4'>블록체인 애플리케이션 개발 시 여러 레벨에서 web3가 어떻게 작동하는지 완벽히 이해해야 한다.</span>
 
-![Alt text](<그림 7.3.png>)
+<img width="263" alt="그림 7 3" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/aa6e2b8f-d5d6-430e-ba75-bc890bd10064">
 - 그림 7.3은 그림 7.1을 개선한 것으로 하나의 애플리케이션 내에서 어떻게 web3를 사용하는지를 보여준다.
 - web3 프로바이더는 web3 API를 구현한다.
 - 애플리케이션의 app.js는 web3 프로바이더의 함수 호출을 통해 블록체인 클라이언트 노드를 액세스하고 상호작용한다.
@@ -107,7 +109,7 @@
 - 지급 금액은 메인 채널의 트랜잭션에 부과되는 트랜잭션 수수료보다 작다(이 경우 메인 채널은 사용할 수 없다).
 - 송신자와 수신자의 관계는 임시적이며, 통상적으로 지급 정산을 하고 메인 채널과의 싱크 완료시 이 관계는 종료된다.
   
-![Alt text](<그림 7.4.png>)
+<img width="291" alt="그림 7 4" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/757aba8a-5a2d-4396-80e4-a0b2b0e2618d">
 - 그림 7.4는 이러한 개념과 두 어카운트 간에 존재하는 온체인 메인 채널과 오프체인 사이드 채널의 관계를 보여준다.
   
     **:one: 메인 채널**
@@ -134,22 +136,22 @@
 
 ### 7.4.1 전통적인 은행 솔루션
 
-![Alt text](<그림 7.5.png>)
+<img width="293" alt="그림 7 5" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/2ef75b22-8c21-4d42-b93c-1e97fc297416">
 
 - 그림 7.5는 대량의 탈중앙화된 글로벌 스케일 플라스틱 수거 작업을 위한 지급 시스템을 통상적인 은행 시스템을 사용해 해결해 보려는 솔루션이다.
 - 이 솔루션은 은행 계좌가 없는 작업자들에게도 소액 지급이 가능한 새로운 지급 시스템을 만들기 위해 전통적인 은행 시스템을 사용해 본 것이다.
 ---
 :question: <span style = 'background-color : yellow'>이 솔루션은 블록체인을 사용한 접근 방법에 비해 몇가지 중요한 문제가 있다.</span>
 - 표 7.1은 어카운트 생성, 소액 지급과 같은 문제를 부각시키고, 전통적인 시스템이 어디에서 한계에 부딪히는지, 블록체인 솔루션은 이러한 문제를 어떻게 명쾌하게 해결하는지 설명한다.
-
-![Alt text](<그림 7.5-1.png>)
+<img width="296" alt="표 7 1" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/99963ef5-5a86-475f-89eb-397ed490d50f">
 
 ---
 
 :exclamation: <span style = 'background-color : yellow'> 두 가지 접근 방법을 비교해보자. </span>
 - 그림 7.6은 그림 7.5의 모델을 블록체인 기반 마이크로 페이먼트 솔루션을 사용해 개선해 본 것이다.
 - 그림 7.6에 두 시스템 간의 차리를 강조해서 나타냈다.
-![Alt text](<그림 7.6.png>)
+<img width="301" alt="그림 7 6" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/625e5fed-6c90-498e-841c-2bdbfee23473">
+
 
 :star: <span style = 'color : #a2e4b8'> **전통적 시스템과 블록체인 솔루션의 가장 중요한 차이는 스마트 컨트랙트가 은행을 대체하고, 디지털 마이크로 페이먼트가 지급 수표를 대체하는 것이다.** </span>
 
@@ -177,10 +179,10 @@
 - MPC 배포, 지급 요청을 위한 오퍼레이션(1, 5, 6)은 온체인에서 이루어지고 스마트 컨트랙트 설계를 규정한다.
 - 오퍼레이션(2, 3, 4)는 오프체인에서 이루어진다.
 
-![Alt text](<그림 7.7.png>)
+<img width="302" alt="그림 7 7" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/55754945-8c5d-4706-bb73-344d261fd8dd">
 
 ### 7.4.4 MPC 스마트 컨트랙트 (MPC-contract)
-![Alt text](<그림 7.8.png>)
+<img width="300" alt="그림 7 8" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/a2301044-e6d7-4dfb-8890-c1e8c6fbba30">
 - 컨트랙트는 constructor 함수를 포함해 두 개의 퍼블릭 함수를 가진다.
 - 이 함수들은 그림 7.7의 분석에서 식별한 두 개의 온체인 오퍼레이션(1, 5)을 코드로 구현한 것이다.
   - **constructor는 주관자가 스마트 컨트랙트를 배포할 수 있도록 한다.**
@@ -226,7 +228,7 @@
   - 블록체인 트랜잭션의 타임스태프로 전통적인 수표의 날짜 대체
 - 블록체인 과부화를 방지하기 위해 최소한의 데이터만 저장하는 것이 좋다.
   
-![Alt text](<그림 7.9.png>)
+<img width="293" alt="그림 7 9" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/3ca00dfd-d3ea-4625-840f-a3637c06abe7">
 
 - 메시지는 사인을 하기 전에 고정 크기로 해시한다.
   - 하나의 메시지 안에 몇 개의 아이템들을 패킹하고 있는지, 또는 각 메시지의 크기에 상관없이 메시지는 고유한 256비트의 값으로 해시한다.
@@ -234,5 +236,5 @@
   - 메타마스크는 이 해시값을 안전하게 사인할 수 있도록 도와준다.
 - 해싱과 사인을 하는 MPC-app의 app.js 코드에서 constructPaymentMessage()함수가 메시지 요소의 해싱을 담당하고, signMessage() 함수는 사인을 처리한다.
 
-![Alt text](<그림 7.10.png>)
+<img width="224" alt="그림 7 10" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/edb2ac8f-5b60-467c-8c17-d366a70009c6">
 - 그림 7.10은 사인을 확정하기 위한 메타마스크 창을 나타낸 것이다.
