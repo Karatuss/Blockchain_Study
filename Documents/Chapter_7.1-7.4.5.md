@@ -67,6 +67,7 @@
 :heavy_check_mark: <span style='background-color:#dcffe4'>블록체인 애플리케이션 개발 시 여러 레벨에서 web3가 어떻게 작동하는지 완벽히 이해해야 한다.</span>
 
 <img width="263" alt="그림 7 3" src="https://github.com/TwoPair/Blockchain_Study/assets/51403372/aa6e2b8f-d5d6-430e-ba75-bc890bd10064">
+
 - 그림 7.3은 그림 7.1을 개선한 것으로 하나의 애플리케이션 내에서 어떻게 web3를 사용하는지를 보여준다.
 - web3 프로바이더는 web3 API를 구현한다.
 - 애플리케이션의 app.js는 web3 프로바이더의 함수 호출을 통해 블록체인 클라이언트 노드를 액세스하고 상호작용한다.
